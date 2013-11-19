@@ -1,0 +1,57 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.geometry.Insets?>
+
+<?import apsk.jaat.interaction.javafx.component.AllAnchors?>
+<?import javafx.scene.control.ListView?>
+<?import apsk.jaat.interaction.javafx.control.AggregatorTableView?>
+<?import javafx.util.Callback?>
+<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="apsk.jaat.interaction.javafx.controller.MainCtrl">
+    <children>
+        <AllAnchors>
+            <SplitPane orientation="HORIZONTAL"
+                       dividerPositions="0.7">
+                <AnchorPane>
+                    <AllAnchors>
+                        <VBox>
+                            <ToolBar nodeOrientation="RIGHT_TO_LEFT">
+                                <ChoiceBox nodeOrientation="LEFT_TO_RIGHT"/>
+                            </ToolBar>
+                            <AnchorPane VBox.vgrow="ALWAYS">
+                                <padding>
+                                    <Insets top="4" left="4" right="4" bottom="4"/>
+                                </padding>
+                                <AllAnchors>
+                                    <TextArea editable="false"/>
+                                </AllAnchors>
+                            </AnchorPane>
+                            <ToolBar nodeOrientation="RIGHT_TO_LEFT">
+                                <Button>R</Button>
+                            </ToolBar>
+                        </VBox>
+                    </AllAnchors>
+                </AnchorPane>
+                <AnchorPane>
+                    <AllAnchors>
+                        <VBox>
+                            <AggregatorTableView VBox.vgrow="ALWAYS"/>
+                            <ToolBar>
+                                <Button onAction="#loadAggregator">Load</Button>
+                                <Button onAction="#removeAggregator">Remove</Button>
+                            </ToolBar>
+                        </VBox>
+                    </AllAnchors>
+                </AnchorPane>
+            </SplitPane>
+        </AllAnchors>
+    </children>
+</AnchorPane>
